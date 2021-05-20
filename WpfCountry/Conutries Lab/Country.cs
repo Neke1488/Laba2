@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace CountryLab
 {
-    //
-    public class State
+    [Serializable]
+    [XmlInclude(typeof(Monarchy))]
+    [XmlInclude(typeof(Republic))]
+    [XmlInclude(typeof(Kingdom))]
+    public abstract class State
     {
         public string Name
         {
@@ -39,6 +43,6 @@ namespace CountryLab
           
         }
 
-
+      
     }
 }

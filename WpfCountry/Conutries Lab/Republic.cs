@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CountryLab
 {
-   public class Republic : State
+    [Serializable]
+    public class Republic : State
     {
         public readonly string type = "Республика";
 
@@ -50,6 +51,9 @@ namespace CountryLab
             return ($"Название страны: {Name} / Население: {Population} / Территория: {Territory} / Дата основания: {_DateOfFoundation} / Власть страны: {_PowerOfCountry} / Язык страны: {_Language}");
         }
 
-        
+        public bool IsSearch(string searchText) => 
+            Name.ToUpper().Contains(searchText.ToUpper()) || 
+            Population.ToString().ToUpper().Contains(searchText.ToUpper()) || 
+            Territory.ToString().ToUpper().Contains(searchText.ToUpper()); 
     }
 }

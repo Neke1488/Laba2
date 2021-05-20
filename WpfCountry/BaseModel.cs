@@ -1,6 +1,7 @@
 ﻿using CountryLab;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -27,8 +28,46 @@ namespace WpfCountry
             }
         }
 
+        private static ObservableCollection<Kingdom> kingdomList = new ObservableCollection<Kingdom>();
+        public static ObservableCollection<Kingdom> KingdomList
+        {
+            get
+            {
+                return kingdomList;
+            }
+            set
+            {
+                kingdomList = value;
+            }
+        }
 
-        public static string path { get; } = @"C:\Users\dunduk\Desktop\data.xml";
+        private static ObservableCollection<Monarchy> monarchyList = new ObservableCollection<Monarchy>();
+        public static ObservableCollection<Monarchy> MonarchyList
+        {
+            get
+            {
+                return monarchyList;
+            }
+            set
+            {
+                monarchyList = value;
+            }
+        }
+
+        private static ObservableCollection<Republic> republicList = new ObservableCollection<Republic>();
+        public static ObservableCollection<Republic> RepublicList
+        {
+            get
+            {
+                return republicList;
+            }
+            set
+            {
+                republicList = value;
+            }
+        }
+
+        public static string path { get; } = @"C:\Users\neket\Downloads\Laba2\Laba2\WpfCountry\Data.xml";
 
         /// <summary>
         /// Сериализация
@@ -37,7 +76,7 @@ namespace WpfCountry
         /// <param name="path">Путь</param>
         /// <param name="list">Список</param>
         /// <returns></returns>
-        public static async  Task XmlSaveAsync<T>(string path, T list)
+        public static async Task XmlSaveAsync<T>(string path, T list)
         {
             await Task.Run(() =>
             {
@@ -81,7 +120,5 @@ namespace WpfCountry
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
-        
     }
 }

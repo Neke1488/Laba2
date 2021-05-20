@@ -26,8 +26,8 @@
                 <ColumnDefinition Width="30*"/>
             </Grid.ColumnDefinitions>
 
-            <TextBox Grid.Column="0" Margin="40,15,40,15" FontSize="20"/>
-            <Button Grid.Column="1" Margin="40,15,40,15" Content="Искать" FontSize="28"/>
+            <TextBox Grid.Column="0" Margin="40,15,40,15" FontSize="20" Text ="{Binding TextBoxSearch}"/>
+            <Button Grid.Column="1" Margin="40,15,40,15" Content="Искать" FontSize="28" Click="Button_Click"/>
 
         </Grid>
         
@@ -37,13 +37,9 @@
                 <ColumnDefinition Width="100*"/>
             </Grid.ColumnDefinitions>
 
-
-
-
-
                 <TabControl FontFamily="Comic Sans MS" FontSize="12" >
                     <TabItem x:Name="FirstСountry" Header="Монархия" Height="30" MinWidth="180" >
-                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding MonarchyList}" CanUserAddRows="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <DataGrid x:Name="MonarchyDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding MonarchyList}" CanUserAddRows="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Название" Width="30*" Binding="{Binding Path=Name}"/>
                                 <DataGridTextColumn Header="Население" Width="20*" Binding="{Binding Path=Population}"/>
@@ -55,7 +51,7 @@
                         </DataGrid>
                     </TabItem>
                     <TabItem x:Name="SecondCountry" Header="Королевство" Height="30" MinWidth="180"  >
-                        <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding KingdomList}" CanUserAddRows="True"  x:Name="KingdomItem"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <DataGrid x:Name="KingdomDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding KingdomList}" CanUserAddRows="True"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Название" Width="30*" Binding="{Binding Path=Name}"/>
                                 <DataGridTextColumn Header="Население" Width="20*" Binding="{Binding Path=Population}"/>
@@ -67,7 +63,7 @@
                         </DataGrid>
                     </TabItem>
                     <TabItem x:Name="ThirdCountry" Header="Республика" Height="30" MinWidth="180"  >
-                        <DataGrid  AutoGenerateColumns="False" ItemsSource="{Binding RepublicList}"  CanUserAddRows="True" x:Name="RepublicItem" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <DataGrid x:Name="RepublicDataGrid" AutoGenerateColumns="False" ItemsSource="{Binding RepublicList}"  CanUserAddRows="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                             <DataGrid.Columns>
                                 <DataGridTextColumn Header="Название" Width="30*" Binding="{Binding Path=Name}"/>
                                 <DataGridTextColumn Header="Население" Width="20*" Binding="{Binding Path=Population}"/>

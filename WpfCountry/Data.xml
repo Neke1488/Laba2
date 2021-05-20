@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<ArrayOfState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <State xsi:type="Kingdom">
+    <Name />
+    <Population>0</Population>
+    <Territory>0</Territory>
+  </State>
+  <State xsi:type="Monarchy">
+    <Name>Россия</Name>
+    <Population>0</Population>
+    <Territory>12321</Territory>
+  </State>
+  <State xsi:type="Monarchy">
+    <Name>Афган </Name>
+    <Population>0</Population>
+    <Territory>534345</Territory>
+  </State>
+  <State xsi:type="Monarchy">
+    <Name>Я</Name>
+    <Population>0</Population>
+    <Territory>323523</Territory>
+  </State>
+  <State xsi:type="Monarchy">
+    <Name>Он</Name>
+    <Population>0</Population>
+    <Territory>2353432</Territory>
+  </State>
+  <State xsi:type="Monarchy">
+    <Name>Ягон</Name>
+    <Population>0</Population>
+    <Territory>0</Territory>
+  </State>
+  <State xsi:type="Monarchy">
+    <Name>Разр</Name>
+    <Population>0</Population>
+    <Territory>0</Territory>
+  </State>
+  <State xsi:type="Republic">
+    <Name>Разр</Name>
+    <Population>232133</Population>
+    <Territory>0</Territory>
+  </State>
+</ArrayOfState>

@@ -22,19 +22,38 @@ namespace WpfCountry
     /// </summary>
     public partial class MainWindow : Window
     {
+
+
+
         public Model model = new Model();
 
         public MainWindow()
         {
             InitializeComponent();
             DataContext = model;
+
+            Closing += model.OnWindowClosing;
         }
 
         public async void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Model.BaseList = await Model.XmlLoadAsync(Model.path);
+            Model.ListToCollection();
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Model.SearchMonarchyList.Clear();
+            Model.SearchKingdomList.Clear();
+            Model.SearchRepublicList.Clear();
+
+            model.Search();
+
+
+            MonarchyDataGrid.ItemsSource = Model.SearchMonarchyList;
+            KingdomDataGrid.ItemsSource = Model.SearchKingdomList;
+            RepublicDataGrid.ItemsSource = Model.SearchRepublicList;
+        }
     }
 }
 
