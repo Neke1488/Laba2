@@ -24,7 +24,7 @@ namespace CountryLab
             this.Language = _Language;
         }
 
-       
+        public Republic() { }
 
         public string DateOfFoundation
         {

@@ -12,7 +12,6 @@ namespace WpfCountry
 
     public class Model : BaseModel
     {
-
         private static ObservableCollection<Kingdom> kingdomList = new ObservableCollection<Kingdom>();
         public static ObservableCollection<Kingdom> KingdomList
         {

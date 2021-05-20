@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CountryLab
 {
-   public class Monarchy : State
+    public class Monarchy : State
     {
         public readonly string type = "Монархия";
 
@@ -24,7 +24,8 @@ namespace CountryLab
             this.Language = _Language;
         }
 
-        
+        public Monarchy() { }
+
         public string DateOfFoundation
         {
             get { return _DateOfFoundation; }
@@ -48,6 +49,6 @@ namespace CountryLab
             return $"Название страны: {Name} / Население: {Population} / Территория: {Territory} / Дата основания: {_DateOfFoundation} / Власть страны: {_PowerOfCountry} / Язык страны: {_Language}";
         }
 
-        
+        public bool IsSearch(string searchText) => Name.ToUpper().Contains(searchText) || Population.ToString().ToUpper().Contains(searchText) || Territory.ToString().ToUpper().Contains(searchText);
     }
 }

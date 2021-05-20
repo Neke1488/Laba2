@@ -28,7 +28,7 @@ namespace WpfCountry
         }
 
 
-        //public static string path { get; } = @"C:\Users\neket\source\repos\Countries Lab\Conutries Lab\WpfCountry\Xml";
+        public static string path { get; } = @"C:\Users\dunduk\Desktop\data.xml";
 
         /// <summary>
         /// Сериализация

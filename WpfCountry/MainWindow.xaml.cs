@@ -30,10 +30,10 @@ namespace WpfCountry
             DataContext = model;
         }
 
-        //public void Window_Loaded(object sender, RoutedEventArgs e)
-        //{
-        //    //Model.BaseList = await Model.XmlLoadAsync(Model.path);
-        //}
+        public async void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            Model.BaseList = await Model.XmlLoadAsync(Model.path);
+        }
 
     }
 }
