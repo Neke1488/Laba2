@@ -48,8 +48,7 @@ namespace WpfCountry
             Model.SearchRepublicList.Clear();
 
             model.Search();
-
-
+            
             MonarchyDataGrid.ItemsSource = Model.SearchMonarchyList;
             KingdomDataGrid.ItemsSource = Model.SearchKingdomList;
             RepublicDataGrid.ItemsSource = Model.SearchRepublicList;

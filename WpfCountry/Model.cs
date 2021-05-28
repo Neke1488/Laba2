@@ -107,13 +107,8 @@ namespace WpfCountry
 
         public void Search()
         {
-            foreach  (var item in KingdomList)
-            {
-                if(item.IsSearch(TextBoxSearch))
-                {
-                    SearchKingdomList.Add(item);
-                }
-            }
+            SearchKingdomList = new ObservableCollection<Kingdom>(KingdomList.Where(item => item.IsSearch(TextBoxSearch)).ToList());
+
             foreach (var item in MonarchyList)
             {
                 if (item.IsSearch(TextBoxSearch))
